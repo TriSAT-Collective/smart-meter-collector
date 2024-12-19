@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "trisatenergy_SMCollector", "trisatenergy_SMCollector\trisatenergy_SMCollector.csproj", "{BC7707E8-0850-40FF-823E-8020CDAEA739}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartMeterTests", "SmartMeterTests\SmartMeterTests.csproj", "{766272FF-6C02-4240-8C5D-DC64236EEC7C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BC7707E8-0850-40FF-823E-8020CDAEA739}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC7707E8-0850-40FF-823E-8020CDAEA739}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC7707E8-0850-40FF-823E-8020CDAEA739}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC7707E8-0850-40FF-823E-8020CDAEA739}.Release|Any CPU.Build.0 = Release|Any CPU
+		{766272FF-6C02-4240-8C5D-DC64236EEC7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{766272FF-6C02-4240-8C5D-DC64236EEC7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{766272FF-6C02-4240-8C5D-DC64236EEC7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{766272FF-6C02-4240-8C5D-DC64236EEC7C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
