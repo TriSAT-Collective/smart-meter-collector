@@ -1,0 +1,19 @@
+{
+  "AppSettings": {
+    "RabbitMQ": {
+      "Uri": "amqp://localhost",
+      "VirtualHost": "/vcs",
+      "Username": "guest",
+      "Password": "guest",
+      "QueueName": "smartmeter-queue"
+    },
+    "Misc": {
+      "MaintenanceMode": false
+    },
+    "Logging": {
+      "LogLevel": {
+        "Default": "Trace"
+      }
+    }
+  }
+}
