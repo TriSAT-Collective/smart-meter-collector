@@ -3,8 +3,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using trisatenergy_SMCollector.SmartMeterCollector;
-
+using MongoDB.Driver;
 namespace trisatenergy_SMCollector;
+using Microsoft.Extensions.Options;
 
 internal class Program
 {
@@ -30,6 +31,15 @@ internal class Program
                     builder.AddConfiguration(context.Configuration.GetSection("AppSettings:Logging"));
                     builder.AddConsole();
                 });
+                // Register the MongoDB service
+                services.AddSingleton<IMongoCollection<SmartMeterResultPayloadModel>>(sp =>
+                {
+                    var settings = sp.GetRequiredService<IOptions<AppSettings>>().Value;
+                    var client = new MongoClient(settings.MongoDB.ConnectionString);
+                    var database = client.GetDatabase(settings.MongoDB.DatabaseName);
+                    return database.GetCollection<SmartMeterResultPayloadModel>(settings.MongoDB.CollectionName);
+                });
+                
                 // Register the SmartMeter service
                 services.AddTransient<MessageCollector>();
             })
