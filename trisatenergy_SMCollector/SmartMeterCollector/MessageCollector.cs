@@ -1,8 +1,10 @@
 using System.Text;
+using System.Text.Json;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
+using trisatenergy_smartmeters.SmartMeterSimulation;
 
 namespace trisatenergy_SMCollector.SmartMeterCollector;
 
@@ -20,7 +22,14 @@ public class MessageCollector
         _logger = logger;
     }
 
-    public async Task StartCollectingAsync()
+    public async Task Stop()
+    {
+        _logger.LogInformation("Message collector stopped.");
+        await _channel.CloseAsync();
+        await _connection.CloseAsync();
+    }
+
+    public async Task Start()
     {
         _logger.LogInformation("Starting to collect messages...");
         // Setup RabbitMQ connection and channel
@@ -41,20 +50,13 @@ public class MessageCollector
         consumer.ReceivedAsync += (model, ea) =>
         {
             var body = ea.Body.ToArray();
-            var message = Encoding.UTF8.GetString(body);
+            var str = Encoding.UTF8.GetString(body);
+            var message = JsonSerializer.Deserialize<SmartMeterResultPayload>(str);
             _logger.LogInformation($"Received message: {message}");
             return Task.CompletedTask;
         };
 
         // Start consuming messages from the specified "OK" queue
         await _channel.BasicConsumeAsync(_settings.RabbitMQ.QueueName, true, consumer);
-    }
-
-    public async ValueTask DisposeAsync()
-    {
-        await _channel.CloseAsync();
-        await _channel.DisposeAsync();
-        await _connection.CloseAsync();
-        await _connection.DisposeAsync();
     }
 }
