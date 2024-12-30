@@ -35,16 +35,10 @@ internal class Program
             })
             .Build();
 
-        DateTime startTime = DateTime.Now;
         using IServiceScope scope = host.Services.CreateScope();
         var messageCollector = scope.ServiceProvider.GetRequiredService<MessageCollector>();
-        try
-        {
-            await messageCollector.StartCollectingAsync();
-        }
-        finally
-        {
-            await messageCollector.DisposeAsync();
-        }
+        await messageCollector.StartCollectingAsync();
+
+        await host.WaitForShutdownAsync();
     }
 }
