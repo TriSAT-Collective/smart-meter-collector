@@ -37,7 +37,7 @@ internal class Program
 
         using IServiceScope scope = host.Services.CreateScope();
         var messageCollector = scope.ServiceProvider.GetRequiredService<MessageCollector>();
-        await messageCollector.StartCollectingAsync();
+        await messageCollector.Start();
 
         await host.WaitForShutdownAsync();
     }
