@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "trisatenergy_SMCollector", "trisatenergy_SMCollector\trisatenergy_SMCollector.csproj", "{BC7707E8-0850-40FF-823E-8020CDAEA739}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMCollector_Test", "SMCollector_Test\SMCollector_Test.csproj", "{5F4026EC-3643-466C-8A58-5AED09DD6C23}"
+EndProject
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,5 +19,9 @@ Global
 		{766272FF-6C02-4240-8C5D-DC64236EEC7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{766272FF-6C02-4240-8C5D-DC64236EEC7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{766272FF-6C02-4240-8C5D-DC64236EEC7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F4026EC-3643-466C-8A58-5AED09DD6C23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F4026EC-3643-466C-8A58-5AED09DD6C23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F4026EC-3643-466C-8A58-5AED09DD6C23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F4026EC-3643-466C-8A58-5AED09DD6C23}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
