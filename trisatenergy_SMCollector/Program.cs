@@ -6,7 +6,7 @@ using trisatenergy_SMCollector.SmartMeterCollector;
 using MongoDB.Driver;
 namespace trisatenergy_SMCollector;
 using Microsoft.Extensions.Options;
-
+using MongoDB;
 internal class Program
 {
     private static async Task Main(string[] args)
@@ -34,10 +34,7 @@ internal class Program
                 // Register the MongoDB service
                 services.AddSingleton<IMongoCollection<SmartMeterResultPayloadModel>>(sp =>
                 {
-                    var settings = sp.GetRequiredService<IOptions<AppSettings>>().Value;
-                    var client = new MongoClient(settings.MongoDB.ConnectionString);
-                    var database = client.GetDatabase(settings.MongoDB.DatabaseName);
-                    return database.GetCollection<SmartMeterResultPayloadModel>(settings.MongoDB.CollectionName);
+                    return MongoDBSetup.InitializeMongoDB(sp.GetRequiredService<IOptions<AppSettings>>().Value).Result;
                 });
                 
                 // Register the SmartMeter service
