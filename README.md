@@ -65,8 +65,7 @@ The application can be configured using a config.json file. Below is an example 
       }
     }
   }
-}
-```
+}```
 
 ```toml
 [general]
