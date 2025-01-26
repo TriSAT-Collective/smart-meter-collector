@@ -24,13 +24,6 @@ The smart-meter-collector is a C# application designed to collect and process da
 - Provides JSON serialization and file export functionality.
 - Configurable via JSON configuration files.
 
-## Dependencies
-
-- .NET 6.0 or later
-- MongoDB.Driver
-- Microsoft.Extensions.Hosting
-- Microsoft.Extensions.Configuration
-- Microsoft.Extensions.Logging
 
 ## Building
 
@@ -76,7 +69,3 @@ The application can be configured using a config.json file. Below is an example 
   }
 }
 ```
-
-## Shoutout
-
-Special thanks to the developers of MongoDB.Driver and Microsoft.Extensions libraries for providing the necessary tools to build this application.
