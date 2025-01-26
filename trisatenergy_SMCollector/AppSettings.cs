@@ -2,10 +2,10 @@ namespace trisatenergy_SMCollector;
 
 public class AppSettings
 {
-    public RabbitMQSettings RabbitMQ { get; set; }
-    public MiscSettings Misc { get; set; }
-    public LoggingSettings Logging { get; set; }
-    public MongoDBSettings MongoDB { get; set; }
+    public RabbitMQSettings RabbitMQ { get; init; }
+    public MiscSettings Misc { get; init; }
+    public LoggingSettings Logging { get; init; }
+    public MongoDBSettings MongoDB { get; init; }
 
     public class RabbitMQSettings
     {

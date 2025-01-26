@@ -11,16 +11,16 @@ public class SmartMeterResultPayloadModel
     [BsonId] public ObjectId Id { get; set; }
 
     [BsonDateTimeOptions(Kind = DateTimeKind.Utc)]
-    public DateTime Timestamp { get; set; }
+    public DateTime Timestamp { get; init; }
 
-    public double TotalProduction { get; set; }
+    public double TotalProduction { get; init; }
 
-    public double SolarProduction { get; set; }
-    public double WindProduction { get; set; }
-    public double OtherProduction { get; set; }
+    public double SolarProduction { get; init; }
+    public double WindProduction { get; init; }
+    public double OtherProduction { get; init; }
 
-    public double TotalConsumption { get; set; }
-    public bool MaintenanceMode { get; set; }
+    public double TotalConsumption { get; init; }
+    public bool MaintenanceMode { get; init; }
 
     public static SmartMeterResultPayloadModel FromPayload(SmartMeterResultPayload? payload)
     {

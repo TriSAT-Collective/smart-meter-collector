@@ -9,9 +9,9 @@ public enum EnergySourceType
 
 public class SmartMeterResultPayload
 {
-    public DateTime Timestamp { get; set; }
-    public double TotalProduction { get; set; }
-    public Dictionary<EnergySourceType, double> ProductionBySource { get; set; }
-    public double TotalConsumption { get; set; }
-    public bool MaintenanceMode { get; set; }
+    public DateTime Timestamp { get; init; }
+    public double TotalProduction { get; init; }
+    public Dictionary<EnergySourceType, double> ProductionBySource { get; init; }
+    public double TotalConsumption { get; init; }
+    public bool MaintenanceMode { get; init; }
 }
