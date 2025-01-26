@@ -41,8 +41,8 @@ To build the project, use the following command:
 ## Installation
 
 To install the project, clone the repository and navigate to the project directory:
-```git clone https://github.com/yourusername/smart-meter-collector.git
-cd smart-meter-collector```
+```git clone https://github.com/yourusername/smart-meter-collector.git```
+```cd smart-meter-collector```
 
 ## Usage
 
