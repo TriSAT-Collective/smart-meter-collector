@@ -36,18 +36,22 @@ The smart-meter-collector is a C# application designed to collect and process da
 
 
 To build the project, use the following command:
-```dotnet build```
+```dotnet build
+```
 
 ## Installation
 
 To install the project, clone the repository and navigate to the project directory:
-```git clone https://github.com/yourusername/smart-meter-collector.git```
-```cd smart-meter-collector```
+```git clone https://github.com/yourusername/smart-meter-collector.git
+```
+```cd smart-meter-collector
+```
 
 ## Usage
 
 To run the application, use the following command:
-```dotnet run```
+```dotnet run
+```
 
 ## Configuration
 
@@ -65,7 +69,8 @@ The application can be configured using a config.json file. Below is an example 
       }
     }
   }
-}```
+}
+```
 
 ```toml
 [general]
