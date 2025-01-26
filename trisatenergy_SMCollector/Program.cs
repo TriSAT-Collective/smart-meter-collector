@@ -32,10 +32,7 @@ internal class Program
                     builder.AddConsole();
                 });
                 // Register the MongoDB service
-                services.AddSingleton<IMongoCollection<SmartMeterResultPayloadModel>>(sp =>
-                {
-                    return MongoDBSetup.InitializeMongoDB(sp.GetRequiredService<IOptions<AppSettings>>().Value).Result;
-                });
+                services.AddSingleton<IMongoCollection<SmartMeterResultPayloadModel>>(sp => MongoDBSetup.InitializeMongoDB(sp.GetRequiredService<IOptions<AppSettings>>().Value).Result);
                 
                 // Register the SmartMeter service
                 services.AddTransient<MessageCollector>();

@@ -9,7 +9,7 @@ namespace SMCollector_Test;
 public class SmartMeterResultPayloadModelTests
 {
     [Fact]
-    public async Task FromPayload_ShouldMapPayloadToModel()
+    public Task FromPayload_ShouldMapPayloadToModel()
     {
         // Arrange
         var payload = new SmartMeterResultPayload
@@ -25,8 +25,6 @@ public class SmartMeterResultPayloadModelTests
             MaintenanceMode = false
         };
 
-        var mockCollection = new Mock<IMongoCollection<SmartMeterResultPayloadModel>>();
-
         // Act
         SmartMeterResultPayloadModel model = SmartMeterResultPayloadModel.FromPayload(payload);
 
@@ -38,6 +36,7 @@ public class SmartMeterResultPayloadModelTests
         Assert.Equal(0, model.OtherProduction);
         Assert.Equal(payload.TotalConsumption, model.TotalConsumption);
         Assert.Equal(payload.MaintenanceMode, model.MaintenanceMode);
+        return Task.CompletedTask;
     }
 
     [Fact]
