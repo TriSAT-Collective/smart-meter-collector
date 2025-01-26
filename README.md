@@ -77,12 +77,6 @@ The application can be configured using a config.json file. Below is an example 
 }
 ```
 
-```toml
-[general]
-log_level = "info"
-show_banner = true
-```
-
 ## Shoutout
 
 Special thanks to the developers of MongoDB.Driver and Microsoft.Extensions libraries for providing the necessary tools to build this application.
