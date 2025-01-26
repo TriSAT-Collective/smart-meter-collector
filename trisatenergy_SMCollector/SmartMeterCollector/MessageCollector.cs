@@ -70,8 +70,9 @@ public class MessageCollector
             var body = ea.Body.ToArray();
             var str = Encoding.UTF8.GetString(body);
             var message = JsonSerializer.Deserialize<SmartMeterResultPayload>(str);
-            _logger.LogInformation($"Received message: {message}");
+            _logger.LogInformation($"Received message: {str}");
             SmartMeterResultPayloadModel model = SmartMeterResultPayloadModel.FromPayload(message);
+
             await model.Insert(_collection);
         };
 
