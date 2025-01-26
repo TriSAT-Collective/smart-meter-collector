@@ -7,8 +7,14 @@ using MongoDB.Driver;
 namespace trisatenergy_SMCollector;
 using Microsoft.Extensions.Options;
 using MongoDB;
+/// <summary>
+/// The main program class.
+/// </summary>
 internal class Program
-{
+{   /// <summary>
+    /// The main entry point for the application.
+    /// </summary>
+    /// <param name="args">The command-line arguments.</param>
     private static async Task Main(string[] args)
     {
         IHost host = Host.CreateDefaultBuilder(args)

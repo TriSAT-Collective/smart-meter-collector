@@ -9,6 +9,9 @@ using trisatenergy_smartmeters.SmartMeterSimulation;
 
 namespace trisatenergy_SMCollector.SmartMeterCollector;
 
+/// <summary>
+/// Collects messages from RabbitMQ and stores them in MongoDB.
+/// </summary>
 public class MessageCollector
 {
     private readonly IMongoCollection<SmartMeterResultPayloadModel> _collection;
@@ -17,7 +20,12 @@ public class MessageCollector
 
     private IChannel _channel; // Changed from IModel to IChannel
     private IConnection _connection;
-
+    /// <summary>
+    /// Initializes a new instance of the <see cref="MessageCollector"/> class.
+    /// </summary>
+    /// <param name="settings">The application settings.</param>
+    /// <param name="logger">The logger instance.</param>
+    /// <param name="collection">The MongoDB collection.</param>
     public MessageCollector(IOptions<AppSettings> settings, ILogger<MessageCollector> logger,
         IMongoCollection<SmartMeterResultPayloadModel> collection)
     {
@@ -25,14 +33,20 @@ public class MessageCollector
         _logger = logger;
         _collection = collection;
     }
-
+    /// <summary>
+    /// Stops the message collector by closing the RabbitMQ connection and channel.
+    /// </summary>
+    /// <returns>A task that represents the asynchronous operation.</returns>
     public async Task Stop()
     {
         _logger.LogInformation("Message collector stopped.");
         await _channel.CloseAsync();
         await _connection.CloseAsync();
     }
-
+    /// <summary>
+    /// Starts the message collector by setting up the RabbitMQ connection and consuming messages.
+    /// </summary>
+    /// <returns>A task that represents the asynchronous operation.</returns>
     public async Task Start()
     {
         _logger.LogInformation("Starting to collect messages...");

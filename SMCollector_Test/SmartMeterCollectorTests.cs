@@ -5,9 +5,13 @@ using trisatenergy_smartmeters.SmartMeterSimulation;
 using trisatenergy_SMCollector.SmartMeterCollector;
 
 namespace SMCollector_Test;
-
+/// <summary>
+/// Contains unit tests for the SmartMeterResultPayloadModel class.
+/// </summary>
 public class SmartMeterResultPayloadModelTests
-{
+{   /// <summary>
+    /// Tests if the FromPayload method correctly maps a SmartMeterResultPayload to a SmartMeterResultPayloadModel.
+    /// </summary>
     [Fact]
     public Task FromPayload_ShouldMapPayloadToModel()
     {
@@ -38,7 +42,9 @@ public class SmartMeterResultPayloadModelTests
         Assert.Equal(payload.MaintenanceMode, model.MaintenanceMode);
         return Task.CompletedTask;
     }
-
+    /// <summary>
+    /// Tests if the ToJson method correctly serializes a SmartMeterResultPayloadModel to JSON.
+    /// </summary>
     [Fact]
     public void ToJson_ShouldSerializeModelToJson()
     {
@@ -61,7 +67,9 @@ public class SmartMeterResultPayloadModelTests
         var expectedJson = JsonSerializer.Serialize(model);
         Assert.Equal(expectedJson, json);
     }
-
+    /// <summary>
+    /// Tests if the ExportToJsonFile method correctly writes a SmartMeterResultPayloadModel to a JSON file.
+    /// </summary>
     [Fact]
     public async Task ExportToJsonFile_ShouldWriteJsonToFile()
     {

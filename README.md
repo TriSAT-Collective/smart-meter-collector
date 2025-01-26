@@ -14,31 +14,59 @@
 
 ## About
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec nunc vulputate tincidunt.
+The smart-meter-collector is a C# application designed to collect and process data from smart meters. It reads data from various energy sources, processes it, and stores it in a MongoDB database.
 
 ## Features
 
-> Describe the features
+- Collects data from smart meters.
+- Supports multiple energy sources (Solar, Wind, Other).
+- Stores data in MongoDB.
+- Provides JSON serialization and file export functionality.
+- Configurable via JSON configuration files.
 
 ## Dependencies
 
-> If there are any third-party dependencies, they should be listed here.
+- .NET 6.0 or later
+- MongoDB.Driver
+- Microsoft.Extensions.Hosting
+- Microsoft.Extensions.Configuration
+- Microsoft.Extensions.Logging
 
 ## Building
 
-> Describe how to build the project.
+
+To build the project, use the following command:
+```dotnet build```
 
 ## Installation
 
-> Describe how to install the project.
+To install the project, clone the repository and navigate to the project directory:
+```git clone https://github.com/yourusername/smart-meter-collector.git
+cd smart-meter-collector```
 
 ## Usage
 
-> Describe how to use the project.
+To run the application, use the following command:
+```dotnet run```
 
 ## Configuration
 
-> Describe how to configure the project.
+The application can be configured using a config.json file. Below is an example configuration:
+```{
+  "MongoDB": {
+    "ConnectionString": "your-mongodb-connection-string",
+    "DatabaseName": "your-database-name",
+    "CollectionName": "your-collection-name"
+  },
+  "AppSettings": {
+    "Logging": {
+      "LogLevel": {
+        "Default": "Information"
+      }
+    }
+  }
+}
+```
 
 ```toml
 [general]
@@ -48,4 +76,4 @@ show_banner = true
 
 ## Shoutout
 
-> Give a shoutout to any libraries or projects that inspired this one.
+Special thanks to the developers of MongoDB.Driver and Microsoft.Extensions libraries for providing the necessary tools to build this application.
