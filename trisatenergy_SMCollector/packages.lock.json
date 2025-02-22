@@ -72,9 +72,9 @@
       },
       "RabbitMQ.Client": {
         "type": "Direct",
-        "requested": "[7.0.0, )",
-        "resolved": "7.0.0",
-        "contentHash": "8YJz22mOSMtkbIVuVSz2HbJwbpKwRoXQ1uqbczDUt1w1Ds8dxFs6dkV/oZ8AlTmkErZjtQelHv+oBu52ud00WA==",
+        "requested": "[7.1.0, )",
+        "resolved": "7.1.0",
+        "contentHash": "8hRFMyGSKGGdO3nsLBiJPzvX3DXmLH57M/ucTod3JCYrAnk9ccTOTpFZUe2nriOCNTSRVizE3gNfzSsNePJJwQ==",
         "dependencies": {
           "System.IO.Pipelines": "8.0.0",
           "System.Threading.RateLimiting": "8.0.0"
